@@ -1,0 +1,11 @@
+.d{
+    text-decoration: line-through;
+}
+
+.isSale{
+    background-color: green;
+}
+
+.isNotSale{
+    background-color: red;
+}

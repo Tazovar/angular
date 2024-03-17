@@ -1,0 +1,21 @@
+<main>
+    <div class="center_container">
+        <ng-container *ngIf="cardsArray.length > 0;else cardIsEmpty">
+<ng-container *ngFor="let card of cardsArray">
+<app-card [card]="card"></app-card>
+</ng-container>
+        </ng-container>
+    </div>
+</main>
+
+<div class="test_container">
+    <app-test></app-test>
+</div>
+
+<button (click)="btnClick()">hello</button>
+
+<ng-template #cardIsEmpty>
+<app-error></app-error>
+</ng-template>
+
+

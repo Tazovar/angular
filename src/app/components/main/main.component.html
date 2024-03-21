@@ -1,21 +1,9 @@
-<main>
-    <div class="center_container">
-        <ng-container *ngIf="cardsArray.length > 0;else cardIsEmpty">
-<ng-container *ngFor="let card of cardsArray">
-<app-card [card]="card"></app-card>
-</ng-container>
+<app-form></app-form>
+
+<div class="card_container">
+    <ng-container *ngIf="getArray().length > 0">
+        <ng-container *ngFor="let card of getArray();let i = index">
+            <app-card [card]="card" [index]="i"></app-card>
         </ng-container>
-    </div>
-</main>
-
-<div class="test_container">
-    <app-test></app-test>
+    </ng-container>
 </div>
-
-<button (click)="btnClick()">hello</button>
-
-<ng-template #cardIsEmpty>
-<app-error></app-error>
-</ng-template>
-
-

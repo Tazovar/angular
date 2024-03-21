@@ -1,15 +1,15 @@
 <div class="card" style="width: 18rem;">
-    <img [src]="card.image" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{card.name}}</h5>
-      <p class="card-text">{{card.description}}</p>
-      <i>
-        <b [ngStyle]="{'text-decoration': card.isSale ? 'line-through' : 'none', 'color':card.isSale ? 'red' : 'green'}">defaultPrice:{{card.price}}</b>
-        <!-- <b [ngStyle]="style">defaultPrice:{{card.price}}</b> -->
-    </i>
-    <strong style="display: block;" *ngIf="card.isSale">sale price:{{card.salePrice}}</strong>
-    <p>{{card.isSale ? 'sale buy now ' : ''}}</p>
-    
-      <a href="#" class="btn btn-primary" [ngClass]="card.isSale ? 'isSale' : 'isNotSale'">Go somewhere</a>
+      <h5 class="card-title">{{card.date}}</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+      <p class="card-text">{{card.text}}</p>
+      <a href="#" class="card-link">{{card.id}}</a>
+      <button class="btn btn-primary mt-2 d-block" (click)="updateCard()">update</button>
+      <button (click)="deleteCard()" class="btn btn-danger mt-2 d-block">delete</button>
     </div>
   </div>
+
+
+
+  <ng-container #container>
+  </ng-container>

@@ -1,0 +1,15 @@
+<div class="modal_container">
+    <div class="modalll">
+      <div class="con">
+        <p style="font-size: 20px;margin: 10px 0px; cursor: pointer;" (click)="testService.closeEmitter.emit()">x</p>
+      </div>
+      <form>
+        <input type="text" name="text" placeholder="text" [(ngModel)]="newObject.text">
+        <h1>date:{{card.date}}</h1>
+        <input name="date" type="date" [(ngModel)]="newObject.date">
+        <button (click)="updatee()">update</button>
+      </form>
+    </div>
+  
+</div>  
+

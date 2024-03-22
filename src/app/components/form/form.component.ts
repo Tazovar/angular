@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TestService } from 'src/app/services/test.service';
+import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-form',
@@ -7,18 +7,19 @@ import { TestService } from 'src/app/services/test.service';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent {
-userObject = {
-  text:"",
+
+userObject:any = {
+  content:"",
   date:"",
-  id:0
 }
 
-constructor(private testService:TestService){}
-
-submit(){
-  this.userObject.id = this.testService.getToDoArray().length + 1
-  let newObject = {...this.userObject};
-this.testService.addTask(newObject);
-console.log(newObject);
-}
+constructor(private toDoService:TodoService){}
+  submit():void{
+    this.userObject.id = this.toDoService.getToDoArray().length + 1;
+    
+    let newObject  ={...this.userObject}
+    
+    this.toDoService.addTask(newObject)
+    console.log(this.toDoService.getToDoArray());
+  }
 }

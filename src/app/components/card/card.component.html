@@ -1,15 +1,18 @@
 <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">{{card.date}}</h5>
-      <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-      <p class="card-text">{{card.text}}</p>
-      <a href="#" class="card-link">{{card.id}}</a>
-      <button class="btn btn-primary mt-2 d-block" (click)="updateCard()">update</button>
-      <button (click)="deleteCard()" class="btn btn-danger mt-2 d-block">delete</button>
-    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{card.content}}</li>
+      <li class="list-group-item">{{card.date}}</li>
+      <li class="list-group-item">Angular lesson 10</li>
+      <li class="list-group-item">
+        <button class="btn btn-danger w-100" (click)="deleteOneItem()">delete</button>
+      </li>
+      <li class="list-group-item">
+        <button class="btn btn-primary w-100" (click)="updateOneItem()">update</button>
+      </li>
+    </ul>
   </div>
 
 
-
   <ng-container #container>
+
   </ng-container>

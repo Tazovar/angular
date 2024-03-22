@@ -1,0 +1,12 @@
+
+
+
+
+
+<div class="container">
+    <ng-container *ngIf="array.length > 0">
+        <ng-container *ngFor="let item of array">
+    <app-post [post]="item"></app-post>
+        </ng-container>
+    </ng-container>
+</div>

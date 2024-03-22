@@ -1,17 +1,20 @@
-import { Component } from '@angular/core';
-import { TestService } from 'src/app/services/test.service';
+import { Component, OnInit } from '@angular/core';
+import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
 
-constructor(private testService:TestService){}
+  constructor(private toDoServise:TodoService){}
 
 
-getArray(){
-  return this.testService.getToDoArray();
-}
+  ngOnInit(): void {}
+
+
+  getToDoArray():any[]{
+    return this.toDoServise.getToDoArray();
+  }
 }

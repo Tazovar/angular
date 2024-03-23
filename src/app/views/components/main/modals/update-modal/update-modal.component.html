@@ -1,0 +1,18 @@
+<div class="modal_container">
+    <div class="modal_main">
+        <div class="close_btn_container">
+            <button class="btn" (click)="close()">close</button>
+        </div>
+        <form class="container" (ngSubmit)="update()">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">User name</label>
+                <input type="text" class="form-control" [(ngModel)]="toDoObject.username" name="username" id="exampleFormControlInput1" placeholder="name... lastname...">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                <textarea class="form-control" name="content" [(ngModel)]="toDoObject.content" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100" >update</button>
+            </form>
+    </div>
+</div>

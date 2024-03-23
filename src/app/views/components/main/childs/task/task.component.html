@@ -1,0 +1,17 @@
+<div class="card" style="width: 18rem;" (click)="goTaskDetails()">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Id:{{task.id}}</li>
+      <li class="list-group-item">{{task.username}}</li>
+      <li class="list-group-item">{{task.content}}</li>
+    </ul>
+    <div class="card-footer">
+      <button class="btn btn-danger" (click)="removeTask()">remove</button>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-primary" (click)="updateTask()">update</button>
+    </div>
+  </div>
+
+
+
+  <ng-container #modalContainer></ng-container>

@@ -1,0 +1,11 @@
+<form class="container" (ngSubmit)="submit()">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">User name</label>
+        <input type="text" class="form-control" [(ngModel)]="toDoObject.username" name="username" id="exampleFormControlInput1" placeholder="name... lastname...">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <textarea class="form-control" name="content" [(ngModel)]="toDoObject.content" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary w-100" >submit</button>
+    </form>

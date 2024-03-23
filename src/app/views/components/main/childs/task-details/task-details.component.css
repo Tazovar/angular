@@ -1,0 +1,12 @@
+.border{
+    width: 100%;
+    height: 1px;
+    border: 1px solid black;
+}
+h2{
+    text-align: center;
+}
+.cont{
+    display: flex;
+    justify-content: center;
+}

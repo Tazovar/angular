@@ -1,0 +1,22 @@
+<div class="form_container">
+    <app-form></app-form>
+</div>
+
+
+<div class="task_container">
+    <div class="center_task_container">
+        <ng-container *ngIf="getArray().length > 0;else emptyRef">
+            <ng-container *ngFor="let item of getArray()">
+                <app-task [task]="item"></app-task>
+            </ng-container>
+        </ng-container>
+    </div>
+    </div>
+    
+
+<ng-template #emptyRef>
+    <p style="text-align: center;">task is not defined</p>
+</ng-template>
+
+
+<router-outlet></router-outlet>

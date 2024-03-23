@@ -1,0 +1,7 @@
+<div class="card" [routerLink]="['/postDetails',post.id]">
+    <div class="card-body">
+ {{post?.title}}
+{{post?.body}}
+    </div>
+</div>
+<button class="btn btn-danger w-100" (click)="deletee()">delete</button>

@@ -46,7 +46,7 @@ console.error("task id is missing");
   }
 
   passwordString:string = "ASDFASasdaf1231241255s_!@#$";
-  passwordSmallElements:string = "afasgandbjnsdijbosjdgokpoaksvoa"
+  passwordSmallElements:string = "afasgandbjnsdijbosjdgokpoaksvoad"
   passwordBiglElements:string = "SFANSGIASIGHAIUSHGIAHSIUGUIASGASG"
   passwordSymbols:string = "!@#$@%"
   
@@ -56,7 +56,6 @@ let pattern  = /[0-9]/
 let symbolPattern = /[!@#$%]/
 let bigWordPattern = /[A-Z]/;
 let smallWordPattern = /[a-z]/;
-
 for(let i = 0; i < 8;i++){
   let randomIndex = Math.floor(Math.random() * this.passwordString.length);
   password += this.passwordString[randomIndex];

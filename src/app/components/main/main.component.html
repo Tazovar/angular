@@ -1,0 +1,12 @@
+<div class="fomr_container">
+    <app-form></app-form>
+</div>
+
+
+<input type="text" [(ngModel)]="password">
+<button (click)="generate()" class="btn btn-primary w-100">generate</button>
+<ng-container *ngIf="array.length > 0">
+<ng-container *ngFor="let item of array">
+<app-task [task]="item"></app-task>
+</ng-container>
+</ng-container>

@@ -1,9 +1,0 @@
-<app-post-form (newPostEmitter)="newPostEmitterSubscirber($event)"></app-post-form>
-
-<div class="post_contaienr">
-    <ng-container *ngIf="posts.length > 0">
-        <ng-container *ngFor="let item of posts">
-            <app-post  (deletePostEmitter)="deletePostEmitterSubscriber($event)" [post]="item"></app-post>
-        </ng-container>
-    </ng-container>
-</div>

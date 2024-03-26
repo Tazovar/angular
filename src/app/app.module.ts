@@ -2,22 +2,23 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
-import { FormComponent } from './components/form/form.component';
-import { TaskComponent } from './components/task/task.component';
-import { MainComponent } from './components/main/main.component';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomPipe } from './pipe/custom.pipe';
+import { TestComponent } from './components/test/test.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http"
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent,
-    TaskComponent,
-    MainComponent,
+    CustomPipe,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

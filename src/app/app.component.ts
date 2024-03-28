@@ -6,14 +6,6 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  {
-  date:any;
-  // myDate:Date = new Date(this.date)
-// data:any = {
-//   name:"tazo",
-//   lastname:"asf",
-//   sd:"sf"
-// }
-
-
+  
 
 }

@@ -1,0 +1,24 @@
+
+<form #form="ngForm" (ngSubmit)="Login(form)">
+    <div class="username">
+        <input type="text" required  #username="ngModel" placeholder="username" name="username" [(ngModel)]="userObject.username">
+        <div class="error-text" *ngIf="username.dirty && username.hasError('required')">
+             username is required
+        </div>
+    </div>
+    
+
+    <div class="Password" ngModelGroup="Password">
+        <div class="password">
+            <input type="password" minlength="8"   #password="ngModel" required name="password" placeholder="password" [(ngModel)]="userObject.password">
+            <div class="error-text" *ngIf="password.dirty && password.hasError('required')">
+            password is required
+                        </div>
+            <div class="error-text" *ngIf="password.dirty && password.hasError('minlength')">
+            min length is <strong>{{password.getError('minlength').requiredLength}}</strong> 
+                        </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-50" [disabled]="form.invalid">login</button>
+</form>

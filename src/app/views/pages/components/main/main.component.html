@@ -1,4 +1,5 @@
 
+<button (click)="logOut()" class="btn btn-danger w-100">log out</button>
 <main>
     <div class="center_container">
         <ng-container *ngIf="data$ | async as data;else cardNotFoundRef">

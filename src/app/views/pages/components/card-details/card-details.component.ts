@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Card } from 'src/app/core/interfaces/card';
+import { Card } from 'src/app/core/interfaces/cardsinterfaces/card';
 import { ProxyService } from 'src/app/views/services/proxy.service';
 
 @Component({

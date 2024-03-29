@@ -1,0 +1,16 @@
+
+<main>
+    <div class="center_container">
+        <ng-container *ngIf="data$ | async as data;else cardNotFoundRef">
+            <ng-container *ngFor="let item of data;let i= index">
+    <app-card [card]="item"></app-card>
+            </ng-container>
+        </ng-container>
+    </div>
+</main>
+
+
+
+<ng-template #cardNotFoundRef>
+<h2>loading...</h2>
+</ng-template>

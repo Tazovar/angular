@@ -1,4 +1,44 @@
-<div class="time_component">
-    <app-time></app-time>
-</div>
-<router-outlet></router-outlet>
+<form [formGroup]="form" (ngSubmit)="submit()" class="form-container">
+    <ng-container formArrayName="jobs">
+        <button (click)="addNewJob()" class="add-job-btn">Add New Job</button>
+        <ng-container *ngFor="let jobGroup of getJobs().controls; let jobIndex = index" [formGroupName]="jobIndex" class="job-group">
+            <div class="job-title">
+                <input type="text" name="jobTitle" formControlName="jobTitle" placeholder="Enter Job Title" class="input-field">
+                <ng-container *ngIf="jobGroup.get('jobTitle') as jobTitle">
+                    <div class="error_text" *ngIf="jobTitle?.dirty &&  jobTitle?.hasError('required')">
+                        job title is required
+                    </div>
+                    <div  class="error_text" *ngIf="jobTitle?.dirty &&  jobTitle?.hasError('minlength')">
+                       your value is <strong> {{jobTitle.getError('minlength').actualLength}}</strong> and min value is {{jobTitle.getError('minlength').requiredLength}}
+                    </div>
+                    <div  class="error_text" *ngIf="jobTitle?.dirty &&  jobTitle?.hasError('appBannedWord')">
+                    this word <strong>{{jobTitle.getError('appBannedWord').findBannedWords}}</strong> is not allowed
+                    </div>
+                </ng-container>
+            </div>
+            <div class="job-description">
+                <input type="text" name="jobDescription" formControlName="jobDescription" placeholder="Enter Job Description" class="input-field">
+            </div>
+            <button (click)="deleteJob(jobIndex)" class="delete-job-btn">Delete Job</button>
+            <button (click)="addNewPosition(jobGroup)" class="add-position-btn">Add Position</button>
+            <ng-container formArrayName="positions">
+                <ng-container *ngFor="let positionGroup of getPositions(jobGroup).controls; let positionIndex=index" [formGroupName]="positionIndex" class="position-group">
+                    <div class="position-name">
+                        <input type="text" name="positionName" formControlName="positionName" placeholder="Enter Position Name" class="input-field">
+                    </div>
+                    <div class="position-description">
+                        <input type="text" name="positionDescription" formControlName="positionDescription" placeholder="Enter Position Description" class="input-field">
+                    </div>
+                    <div class="start-date">
+                        <input type="date" name="startDate" formControlName="startDate" class="input-field">
+                    </div>
+                    <div class="end-date">
+                        <input type="date" name="endDate" formControlName="endDate" class="input-field">
+                    </div>
+                    <button (click)="deletePosition(jobGroup, positionIndex)" class="delete-position-btn">Delete Position</button>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+    </ng-container>
+    <button type="submit" class="submit-btn" [disabled]="form.invalid" >Submit</button>
+</form>

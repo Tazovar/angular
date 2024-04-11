@@ -1,7 +1,0 @@
-<ng-container *ngIf="data$ | async as data;else cardnotfound">
-    <app-card-details-card [card]="data"></app-card-details-card>
-</ng-container>
-
-<ng-template #cardnotfound>
-<h2>loading ...</h2>
-</ng-template>
